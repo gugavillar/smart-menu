@@ -11,13 +11,17 @@
     "check-types": "tsc --noemit"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "lucide-react": "^0.561.0",
     "next": "16.0.10",
     "react": "19.2.1",
     "react-dom": "19.2.1",
+    "react-hook-form": "^7.68.0",
     "react-modal-sheet": "^5.2.1",
     "swiper": "^12.0.3",
-    "usehooks-ts": "^3.1.1"
+    "usehooks-ts": "^3.1.1",
+    "validations-br": "^1.6.0",
+    "zod": "^4.1.13"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.8",

@@ -1,11 +1,18 @@
 import { Search } from 'lucide-react'
 
-import { Categories, Input } from '@/components'
+import { Plate } from '@/assets'
+import { Categories, Header, Input } from '@/components'
 import { Foods } from '@/components/molecules/Foods'
 
-export default function CatalogPage() {
+export default function MenuPage() {
 	return (
-		<div className='flex flex-col px-4 mt-14 overflow-y-hidden'>
+		<div className='flex flex-col px-4 overflow-y-hidden'>
+			<Header
+				className='pb-14'
+				overTitle={<Plate className='mx-auto stroke-white' height={48} width={48} />}
+				title='Smart menu'
+				titleClassName='text-4xl text-center'
+			/>
 			<Input icon={<Search />} placeholder='Qual comida você está procurando?' type='search' />
 			<div className='flex flex-col w-full mt-8 space-y-8 pb-28 overflow-y-auto'>
 				<Categories />

@@ -3,9 +3,10 @@ import { type ComponentPropsWithRef, forwardRef, type ReactNode } from 'react'
 type InputProps = ComponentPropsWithRef<'input'> & {
 	label?: string
 	icon: ReactNode
+	error?: string
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(({ label, icon, ...props }, ref) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ label, icon, error, ...props }, ref) => {
 	return (
 		<div className='w-full space-y-3'>
 			<div>
@@ -22,6 +23,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ label, icon, ..
 					/>
 					<div className='absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-4'>{icon}</div>
 				</div>
+				{error && <p className='text-red-500 text-sm mt-1.5'>{error}</p>}
 			</div>
 		</div>
 	)

@@ -1,32 +1,11 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/css'
-
 import { useScreen } from 'usehooks-ts'
 
-import { Mass, Meat, Pizza, Snack } from '@/assets'
+import { CategoryButton } from '@/components/atoms'
+import { categories } from '@/mocks'
 
-import { CategoryButton } from '../atoms'
-
-const categories = [
-	{
-		icon: <Mass />,
-		label: 'Massas',
-	},
-	{
-		icon: <Meat />,
-		label: 'Carnes',
-	},
-	{
-		icon: <Pizza />,
-		label: 'Pizzas',
-	},
-	{
-		icon: <Snack />,
-		label: 'Lanches',
-	},
-]
+import 'swiper/css'
 
 const slidesPerView = (width: number) => {
 	if (width <= 375) {

@@ -2,8 +2,7 @@
 import { usePathname } from 'next/navigation'
 
 import { Catalog, ShoppingBag } from '@/assets'
-
-import { LinkButton } from '../atoms'
+import { LinkButton } from '@/components/atoms'
 
 export const FooterButtons = () => {
 	const path = usePathname()

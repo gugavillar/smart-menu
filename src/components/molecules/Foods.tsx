@@ -1,4 +1,5 @@
-import { Card, foodsMock, TitleWithLink } from '../atoms'
+import { Card, TitleWithLink } from '@/components/atoms'
+import { foodsMock } from '@/mocks'
 
 export const Foods = () => {
 	return (

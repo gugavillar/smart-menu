@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^5.2.2
+        version: 5.2.2(react-hook-form@7.68.0(react@19.2.1))
       lucide-react:
         specifier: ^0.561.0
         version: 0.561.0(react@19.2.1)
@@ -20,6 +23,9 @@ importers:
       react-dom:
         specifier: 19.2.1
         version: 19.2.1(react@19.2.1)
+      react-hook-form:
+        specifier: ^7.68.0
+        version: 7.68.0(react@19.2.1)
       react-modal-sheet:
         specifier: ^5.2.1
         version: 5.2.1(motion@12.23.26(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -29,6 +35,12 @@ importers:
       usehooks-ts:
         specifier: ^3.1.1
         version: 3.1.1(react@19.2.1)
+      validations-br:
+        specifier: ^1.6.0
+        version: 1.6.0
+      zod:
+        specifier: ^4.1.13
+        version: 4.1.13
     devDependencies:
       '@biomejs/biome':
         specifier: 2.3.8
@@ -122,6 +134,11 @@ packages:
 
   '@emnapi/runtime@1.7.1':
     resolution: {integrity: sha512-PVtJr5CmLwYAU9PZDMITZoR5iAOShYREoR45EyyLrbntV50mdePTgUn4AmOw90Ifcj+x2kRjdzr1HP3RrNiHGA==}
+
+  '@hookform/resolvers@5.2.2':
+    resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
+    peerDependencies:
+      react-hook-form: ^7.55.0
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -326,6 +343,9 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -710,6 +730,12 @@ packages:
     peerDependencies:
       react: ^19.2.1
 
+  react-hook-form@7.68.0:
+    resolution: {integrity: sha512-oNN3fjrZ/Xo40SWlHf1yCjlMK417JxoSJVUXQjGdvdRCU07NTFei1i1f8ApUAts+IVh14e4EdakeLEA+BEAs/Q==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+
   react-modal-sheet@5.2.1:
     resolution: {integrity: sha512-M6JDBU0Ut4vksED3P9hZXnVW2S3755VXXPmbniPv7hNcn9y+1qz+zrZb0U3iSDDMeUe1zwfXTmrX3Mcw7wOtHQ==}
     engines: {node: '>=18'}
@@ -825,6 +851,9 @@ packages:
     peerDependencies:
       react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
 
+  validations-br@1.6.0:
+    resolution: {integrity: sha512-sFnDslgfoqyTDJJAwrJWi4/mHK4XT/yC326GjTphnTUNvdjeLOy32q0wp2jlXjYpRulWVq5LouicNQuBMCi1Mw==}
+
   wrap-ansi@9.0.2:
     resolution: {integrity: sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==}
     engines: {node: '>=18'}
@@ -833,6 +862,9 @@ packages:
     resolution: {integrity: sha512-mplynKqc1C2hTVYxd0PU2xQAc22TI1vShAYGksCCfxbn/dFwnHTNi1bvYsBTkhdUNtGIf5xNOg938rrSSYvS9A==}
     engines: {node: '>= 14.6'}
     hasBin: true
+
+  zod@4.1.13:
+    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
 
 snapshots:
 
@@ -877,6 +909,11 @@ snapshots:
     dependencies:
       tslib: 2.8.1
     optional: true
+
+  '@hookform/resolvers@5.2.2(react-hook-form@7.68.0(react@19.2.1))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.68.0(react@19.2.1)
 
   '@img/colour@1.0.0':
     optional: true
@@ -1019,6 +1056,8 @@ snapshots:
 
   '@next/swc-win32-x64-msvc@16.0.10':
     optional: true
+
+  '@standard-schema/utils@0.3.0': {}
 
   '@swc/helpers@0.5.15':
     dependencies:
@@ -1337,6 +1376,10 @@ snapshots:
       react: 19.2.1
       scheduler: 0.27.0
 
+  react-hook-form@7.68.0(react@19.2.1):
+    dependencies:
+      react: 19.2.1
+
   react-modal-sheet@5.2.1(motion@12.23.26(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:
       motion: 12.23.26(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -1451,6 +1494,8 @@ snapshots:
       lodash.debounce: 4.0.8
       react: 19.2.1
 
+  validations-br@1.6.0: {}
+
   wrap-ansi@9.0.2:
     dependencies:
       ansi-styles: 6.2.3
@@ -1458,3 +1503,5 @@ snapshots:
       strip-ansi: 7.1.2
 
   yaml@2.8.2: {}
+
+  zod@4.1.13: {}

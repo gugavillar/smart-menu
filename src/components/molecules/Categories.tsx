@@ -1,4 +1,5 @@
-import { TitleWithLink } from '../atoms'
+import { TitleWithLink } from '@/components/atoms'
+
 import { CategoriesList } from './CategoriesList'
 
 export const Categories = () => {
