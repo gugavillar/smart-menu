@@ -12,7 +12,11 @@ export default function HomePage() {
 				title='Smart menu'
 				titleClassName='text-4xl text-center'
 			/>
-			<Input icon={<Search />} placeholder='Qual comida você está procurando?' type='search' />
+			<Input
+				icon={<Search className='text-grey-600' />}
+				placeholder='Qual comida você está procurando?'
+				type='search'
+			/>
 			<div className='flex flex-col w-full mt-8 space-y-8 pb-28 overflow-y-auto'>
 				<Categories />
 				<Foods />

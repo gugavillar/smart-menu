@@ -7,6 +7,8 @@ import { categories } from '@/mocks'
 
 import 'swiper/css'
 
+import { URLS } from '@/utils'
+
 const slidesPerView = (width: number) => {
 	if (width <= 375) {
 		return 2.4
@@ -30,7 +32,7 @@ export const CategoriesList = () => {
 			{categories?.map((category, index) => (
 				<SwiperSlide key={`${index}-${category.label}`}>
 					<CategoryButton
-						href={`/categorias/${category.label.toLocaleLowerCase()}`}
+						href={URLS.category(category.label.toLocaleLowerCase())}
 						icon={category.icon}
 						label={category.label}
 					/>

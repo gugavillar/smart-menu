@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
 import { Button, Input, Title } from '@/components'
+import { URLS } from '@/utils'
 
 import { type FormLoginSchema, formLoginSchemaResolver } from './LoginForm.schema'
 
@@ -23,7 +24,7 @@ export const LoginForm = () => {
 
 	const onSubmit = (data: FormLoginSchema) => {
 		console.log(data)
-		push('/inicio')
+		push(URLS.home)
 	}
 
 	return (

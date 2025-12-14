@@ -2,6 +2,7 @@ export const foodsMock = [
 	{
 		categories: 'Lanches',
 		description: 'Hambúrguer artesanal com carne suculenta, queijo cheddar e pão brioche.',
+		id: '019b1e82-3200-72a6-9407-50482776f0bc',
 		image: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
 		price: 29.9,
 		title: 'Hambúrguer Artesanal',
@@ -9,6 +10,7 @@ export const foodsMock = [
 	{
 		categories: 'Pizzas',
 		description: 'Pizza clássica italiana com molho de tomate, muçarela e manjericão fresco.',
+		id: '019b1e82-5feb-7189-af5f-a614d381709b',
 		image: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
 		price: 42.5,
 		title: 'Pizza Margherita',
@@ -16,6 +18,7 @@ export const foodsMock = [
 	{
 		categories: 'Sushi',
 		description: 'Seleção de sushi frescos com salmão, atum e arroz temperado.',
+		id: '019b1e82-ce49-7471-814d-83bf6cd9f935',
 		image: 'https://images.unsplash.com/photo-1553621042-f6e147245754',
 		price: 55.0,
 		title: 'Sushi Variado',
@@ -23,6 +26,7 @@ export const foodsMock = [
 	{
 		categories: 'Massas',
 		description: 'Lasanha tradicional com molho bolonhesa, queijo derretido e massa fresca.',
+		id: '019b1e82-e43e-736a-ab8f-a11a62752bde',
 		image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b',
 		price: 38.0,
 		title: 'Lasanha Bolonhesa',
@@ -30,6 +34,7 @@ export const foodsMock = [
 	{
 		categories: 'Saladas',
 		description: 'Salada Caesar com frango grelhado, croutons e molho especial.',
+		id: '019b1e82-f39c-706d-b751-c629eaadc07a',
 		image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9',
 		price: 26.5,
 		title: 'Salada Caesar',
@@ -37,8 +42,9 @@ export const foodsMock = [
 	{
 		categories: 'Massas',
 		description: 'Panquecas fofinhas servidas com frutas frescas e mel.',
+		id: '019b1e83-046b-722e-8e9b-2a3a4d8e4d6a',
 		image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b',
 		price: 22.0,
 		title: 'Panquecas com Frutas',
 	},
-]
+] as const

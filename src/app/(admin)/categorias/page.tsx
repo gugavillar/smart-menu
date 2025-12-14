@@ -1,15 +1,16 @@
 import { BackHeader, CategoryButton } from '@/components'
 import { categories } from '@/mocks'
+import { URLS } from '@/utils'
 
 export default function CategoriesPage() {
 	return (
 		<div className='flex flex-col px-4 overflow-y-hidden'>
 			<BackHeader title='Categorias' />
-			<div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+			<div className='grid grid-cols-2 md:grid-cols-3 gap-4 mt-4 overflow-y-auto pb-28'>
 				{categories.map((category) => (
 					<CategoryButton
 						className='w-full'
-						href={`/categorias/${category.label.toLowerCase()}`}
+						href={URLS.category(category.label.toLowerCase())}
 						icon={category.icon}
 						key={category.label}
 						label={category.label}

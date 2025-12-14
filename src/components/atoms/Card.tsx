@@ -1,6 +1,10 @@
+'use client'
+import type { UUID } from 'crypto'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
-import { currencyValue } from '@/utils'
+import { currencyValue, URLS } from '@/utils'
 
 import { Title } from './Title'
 
@@ -9,17 +13,20 @@ type CardProps = {
 	price: number
 	description: string
 	image: string
+	id: UUID
 }
 
-export const Card = ({ title, price, description, image }: CardProps) => {
+export const Card = ({ title, price, description, image, id }: CardProps) => {
+	const [imageError, setImageError] = useState(false)
 	return (
-		<div className='bg-white-300 border border-grey-400 rounded-xl shadow-2xs flex h-[136px]'>
+		<Link className='bg-white-300 border border-grey-400 rounded-xl shadow-2xs flex h-[136px]' href={URLS.menu(id)}>
 			<div className='relative w-full rounded-tl-lg rounded-bl-lg overflow-hidden max-w-[136px] h-full'>
 				<Image
-					alt='Card Image'
+					alt={title}
 					className='size-full absolute top-0 start-0 object-cover'
 					height={136}
-					src={image}
+					onError={() => setImageError(true)}
+					src={imageError ? '/fallback-img.png' : image}
 					width={560}
 				/>
 			</div>
@@ -32,6 +39,6 @@ export const Card = ({ title, price, description, image }: CardProps) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	)
 }
