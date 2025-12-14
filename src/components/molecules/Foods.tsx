@@ -1,4 +1,4 @@
-import { Card, TitleWithLink } from '@/components/atoms'
+import { Card, TitleWithLink } from '@/components'
 import { foodsMock } from '@/mocks'
 
 export const Foods = () => {

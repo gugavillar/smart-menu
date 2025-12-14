@@ -7,7 +7,13 @@ export default function CategoriesPage() {
 			<BackHeader title='Categorias' />
 			<div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
 				{categories.map((category) => (
-					<CategoryButton className='w-full' icon={category.icon} key={category.label} label={category.label} />
+					<CategoryButton
+						className='w-full'
+						href={`/categorias/${category.label.toLowerCase()}`}
+						icon={category.icon}
+						key={category.label}
+						label={category.label}
+					/>
 				))}
 			</div>
 		</div>

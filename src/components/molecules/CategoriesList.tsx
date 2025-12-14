@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useScreen } from 'usehooks-ts'
 
-import { CategoryButton } from '@/components/atoms'
+import { CategoryButton } from '@/components'
 import { categories } from '@/mocks'
 
 import 'swiper/css'
@@ -29,7 +29,11 @@ export const CategoriesList = () => {
 		<Swiper className='flex overflow-hidden w-full' slidesPerView={slidesPerView(screen?.width ?? 375)}>
 			{categories?.map((category, index) => (
 				<SwiperSlide key={`${index}-${category.label}`}>
-					<CategoryButton icon={category.icon} label={category.label} />
+					<CategoryButton
+						href={`/categorias/${category.label.toLocaleLowerCase()}`}
+						icon={category.icon}
+						label={category.label}
+					/>
 				</SwiperSlide>
 			))}
 		</Swiper>

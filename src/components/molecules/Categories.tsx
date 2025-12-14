@@ -1,4 +1,4 @@
-import { TitleWithLink } from '@/components/atoms'
+import { TitleWithLink } from '@/components'
 
 import { CategoriesList } from './CategoriesList'
 

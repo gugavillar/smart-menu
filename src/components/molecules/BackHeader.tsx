@@ -3,7 +3,7 @@
 import { ChevronLeft } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-import { Header } from '@/components/organisms'
+import { Header } from '@/components'
 
 type BackHeaderProps = {
 	title: string
@@ -15,13 +15,13 @@ export const BackHeader = ({ title }: BackHeaderProps) => {
 		<Header
 			className='py-24 flex flex-row items-center justify-between'
 			overTitle={
-				<button className='p-2 inline-flex items-center text-white-300 text-lg font-secondary' type='button'>
-					<ChevronLeft className='text-white-300' onClick={back} size={32} />
+				<button className='inline-flex items-center text-white-300 text-lg font-secondary' onClick={back} type='button'>
+					<ChevronLeft className='text-white-300' size={32} />
 					Voltar
 				</button>
 			}
 			title={title}
-			titleClassName='text-2xl text-center'
+			titleClassName='text-2xl text-center first-letter:uppercase'
 		/>
 	)
 }

@@ -1,16 +1,17 @@
+import Link from 'next/link'
 import type { ComponentProps, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Title } from './Title'
 
-type CategoryButtonProps = ComponentProps<'button'> & {
+type CategoryButtonProps = ComponentProps<typeof Link> & {
 	icon: ReactNode
 	label: string
 }
 
 export const CategoryButton = ({ icon, label, className, ...props }: CategoryButtonProps) => {
 	return (
-		<button
+		<Link
 			className={twMerge(
 				'bg-white-300 flex flex-col items-center justify-between border-grey-400 size-30 py-4 px-7 rounded-xl border shadow-2xs',
 				className
@@ -21,6 +22,6 @@ export const CategoryButton = ({ icon, label, className, ...props }: CategoryBut
 			<Title as='h3' className='text-xl font-primary text-grey-800'>
 				{label}
 			</Title>
-		</button>
+		</Link>
 	)
 }

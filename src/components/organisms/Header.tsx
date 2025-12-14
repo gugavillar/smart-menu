@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { Title } from '@/components/atoms'
+import { Title } from '@/components'
 
 type HeaderProps = ComponentProps<'div'> & {
 	title: string

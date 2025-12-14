@@ -3,7 +3,7 @@ import { Lock, LogIn, Mail } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 
-import { Button, Input, Title } from '@/components/atoms'
+import { Button, Input, Title } from '@/components'
 
 import { type FormLoginSchema, formLoginSchemaResolver } from './LoginForm.schema'
 
@@ -23,7 +23,7 @@ export const LoginForm = () => {
 
 	const onSubmit = (data: FormLoginSchema) => {
 		console.log(data)
-		push('/cardapio')
+		push('/inicio')
 	}
 
 	return (

@@ -25,7 +25,7 @@ export const Card = ({ title, price, description, image }: CardProps) => {
 			</div>
 			<div className='flex flex-wrap w-full'>
 				<div className='p-4 flex flex-col size-full space-y-2'>
-					<Title className='font-primary text-lg text-black'>{title}</Title>
+					<Title className='font-primary text-black'>{title}</Title>
 					<p className='font-secondary text-xs text-grey-800 line-clamp-2'>{description}</p>
 					<div className='mt-auto'>
 						<p className='font-primary text-lg text-secondary-500 text-end font-semibold'>{currencyValue(price)}</p>
