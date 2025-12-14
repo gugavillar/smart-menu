@@ -12,7 +12,7 @@ type HeaderProps = ComponentProps<'div'> & {
 
 export const Header = ({ className, title, titleClassName, overTitle, underTitle, ...props }: HeaderProps) => {
 	return (
-		<div className={twMerge('px-4 pt-18 flex flex-col font-primary', className)} {...props}>
+		<div className={twMerge('px-4 pt-12 flex flex-col font-primary', className)} {...props}>
 			{overTitle}
 			<Title className={titleClassName}>{title}</Title>
 			{underTitle}

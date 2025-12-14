@@ -12,7 +12,7 @@ export const CategoryButton = ({ icon, label, className, ...props }: CategoryBut
 	return (
 		<button
 			className={twMerge(
-				'bg-white-300 flex flex-col items-center justify-between border-grey-400 size-30 py-4 px-7 rounded-xl border',
+				'bg-white-300 flex flex-col items-center justify-between border-grey-400 size-30 py-4 px-7 rounded-xl border shadow-2xs',
 				className
 			)}
 			{...props}
