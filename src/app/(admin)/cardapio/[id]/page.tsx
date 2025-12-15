@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation'
 
-import { HeaderMenuItem, Title } from '@/components'
+import { FoodForm, HeaderMenuItem } from '@/components'
 import { foodsMock } from '@/mocks'
-import { currencyValue, URLS } from '@/utils'
+import { URLS } from '@/utils'
 
 type Params = {
 	params: Promise<{
@@ -26,18 +26,7 @@ export default async function MenuItemPage({ params }: Params) {
 	return (
 		<div className='flex flex-col overflow-y-hidden'>
 			<HeaderMenuItem image={food.image} title={food.title} />
-			<div className='flex flex-col space-y-6 mt-6 px-4'>
-				<div className='flex flex-col space-y-2'>
-					<div className='flex flex-col space-y-0.5'>
-						<Title className='font-primary text-3xl font-semibold text-black'>{food.title}</Title>
-						<p className='text-grey-800 font-secondary'>A partir de {currencyValue(food.price)}</p>
-					</div>
-					<p className='text-grey-800 font-secondary text-lg'> {food.description}</p>
-				</div>
-				<div className='flex flex-col space-y-4'>
-					<Title className='font-primary text-xl font-semibold text-grey-800'>Adicionais</Title>
-				</div>
-			</div>
+			<FoodForm food={food} />
 		</div>
 	)
 }

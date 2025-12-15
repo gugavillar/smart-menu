@@ -13,7 +13,7 @@ export const HeaderMenuItem = ({ title, image }: HeaderMenuItemProps) => {
 	const [imageError, setImageError] = useState(false)
 	const { back } = useRouter()
 	return (
-		<div className='relative overflow-hidden w-full h-[220px]'>
+		<div className='relative overflow-hidden w-full min-h-[220px]'>
 			<Image
 				alt={title}
 				className='size-full absolute top-0 start-0 object-cover'

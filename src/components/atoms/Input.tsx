@@ -17,7 +17,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ label, icon, er
 				)}
 				<div className='relative'>
 					<input
-						className='py-4 px-4 ps-11 font-secondary block w-full border-grey-400 bg-white-300 text-grey-800 rounded-xl sm:text-sm focus:z-10 disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none drop-shadow-lg'
+						className='py-4 px-4 ps-11 font-secondary block w-full border-grey-400 bg-white-300 text-grey-800 rounded-xl disabled:opacity-50 disabled:pointer-events-none focus-visible:outline-none drop-shadow-lg'
 						ref={ref}
 						{...props}
 					/>

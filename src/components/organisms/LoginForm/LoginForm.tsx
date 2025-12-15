@@ -32,10 +32,12 @@ export const LoginForm = () => {
 			className='flex flex-col items-center justify-center space-y-4 w-full my-auto'
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<Title className='text-center text-grey-900 font-primary text-lg'>Bem vindo</Title>
-			<p className='text-center text-grey-800 text-sm'>
-				Entre com seu email e senha para acessar o cardápio e atender seus clientes com mais agilidade.
-			</p>
+			<div className='flex flex-col'>
+				<Title className='text-center text-grey-900 font-primary text-lg'>Bem vindo</Title>
+				<p className='text-center text-grey-800 text-sm'>
+					Entre com seu email e senha para acessar o cardápio e atender seus clientes com mais agilidade.
+				</p>
+			</div>
 			<Input
 				icon={<Mail className='text-grey-600' />}
 				label='Email'

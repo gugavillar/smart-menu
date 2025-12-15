@@ -1,5 +1,19 @@
 export const foodsMock = [
 	{
+		additional: [
+			{
+				price: 1.5,
+				product: 'Alface',
+			},
+			{
+				price: 1.0,
+				product: 'Tomate',
+			},
+			{
+				price: 2.0,
+				product: 'Queijo',
+			},
+		],
 		categories: 'Lanches',
 		description: 'Hambúrguer artesanal com carne suculenta, queijo cheddar e pão brioche.',
 		id: '019b1e82-3200-72a6-9407-50482776f0bc',
@@ -8,6 +22,20 @@ export const foodsMock = [
 		title: 'Hambúrguer Artesanal',
 	},
 	{
+		additional: [
+			{
+				price: 1.5,
+				product: 'Alface',
+			},
+			{
+				price: 1.0,
+				product: 'Tomate',
+			},
+			{
+				price: 2.0,
+				product: 'Queijo',
+			},
+		],
 		categories: 'Pizzas',
 		description: 'Pizza clássica italiana com molho de tomate, muçarela e manjericão fresco.',
 		id: '019b1e82-5feb-7189-af5f-a614d381709b',
@@ -16,6 +44,7 @@ export const foodsMock = [
 		title: 'Pizza Margherita',
 	},
 	{
+		additional: [],
 		categories: 'Sushi',
 		description: 'Seleção de sushi frescos com salmão, atum e arroz temperado.',
 		id: '019b1e82-ce49-7471-814d-83bf6cd9f935',
@@ -24,6 +53,7 @@ export const foodsMock = [
 		title: 'Sushi Variado',
 	},
 	{
+		additional: [],
 		categories: 'Massas',
 		description: 'Lasanha tradicional com molho bolonhesa, queijo derretido e massa fresca.',
 		id: '019b1e82-e43e-736a-ab8f-a11a62752bde',
@@ -32,6 +62,7 @@ export const foodsMock = [
 		title: 'Lasanha Bolonhesa',
 	},
 	{
+		additional: [],
 		categories: 'Saladas',
 		description: 'Salada Caesar com frango grelhado, croutons e molho especial.',
 		id: '019b1e82-f39c-706d-b751-c629eaadc07a',
@@ -40,6 +71,7 @@ export const foodsMock = [
 		title: 'Salada Caesar',
 	},
 	{
+		additional: [],
 		categories: 'Massas',
 		description: 'Panquecas fofinhas servidas com frutas frescas e mel.',
 		id: '019b1e83-046b-722e-8e9b-2a3a4d8e4d6a',
