@@ -1,6 +1,6 @@
 import { FooterButtons, OrderButton } from '@/components'
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function RoutesLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<div className='flex size-full flex-col'>
 			{children}

@@ -14,7 +14,7 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 	const price = hasAdditional ? `A partir de ${currencyValue(food.price)}` : currencyValue(food.price)
 
 	return (
-		<div className='flex flex-col space-y-6 mt-6 px-4 overflow-y-auto pb-28'>
+		<div className='flex flex-col space-y-6 mt-6 px-4 overflow-y-auto pb-40'>
 			<div className='flex flex-col space-y-2'>
 				<div className='flex flex-col space-y-0.5'>
 					<Title className='font-primary text-3xl font-semibold text-black'>{food.title}</Title>

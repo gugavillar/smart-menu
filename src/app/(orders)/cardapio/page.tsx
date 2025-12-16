@@ -18,7 +18,7 @@ export default function MenuPage() {
 				placeholder='Qual comida você está procurando?'
 				type='search'
 			/>
-			<div className='columns-1 md:columns-2 lg:columns-3 space-y-4 overflow-y-auto mt-4 pb-28'>
+			<div className='columns-1 md:columns-2 lg:columns-3 space-y-4 overflow-y-auto mt-4 pb-40'>
 				{categoriesFoods.map((category) => (
 					<div className='flex flex-col space-y-2' key={category.category}>
 						<Title className='text-2xl font-secondary text-grey-800'>{category.category}</Title>
