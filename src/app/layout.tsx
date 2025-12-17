@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Lato, Roboto } from 'next/font/google'
 import './globals.css'
 
+import { OrdersProvider } from '@/contexts'
+
 const lato = Lato({
 	subsets: ['latin'],
 	variable: '--font-lato',
@@ -26,7 +28,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html className={`${lato.variable} ${roboto.variable}`} lang='pt-BR'>
-			<body className='h-dvh w-dvw antialiased background overflow-hidden'>{children}</body>
+			<body className='h-dvh w-dvw antialiased background overflow-hidden'>
+				<OrdersProvider>{children}</OrdersProvider>
+			</body>
 		</html>
 	)
 }

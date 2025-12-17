@@ -1,6 +1,7 @@
 'use client'
 
 import { AddField, Textarea, Title } from '@/components'
+import { useOrders } from '@/contexts'
 import type { foodsMock } from '@/mocks'
 import { currencyValue } from '@/utils'
 
@@ -9,6 +10,7 @@ type FoodFormProps = {
 }
 
 export const FoodForm = ({ food }: FoodFormProps) => {
+	const { orders, handleChangeObservation } = useOrders()
 	const hasAdditional = !!food?.additional?.length
 
 	const price = hasAdditional ? `A partir de ${currencyValue(food.price)}` : currencyValue(food.price)
@@ -17,7 +19,7 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 		<div className='flex flex-col space-y-6 mt-6 px-4 overflow-y-auto pb-40'>
 			<div className='flex flex-col space-y-2'>
 				<div className='flex flex-col space-y-0.5'>
-					<Title className='font-primary text-3xl font-semibold text-black'>{food.title}</Title>
+					<Title className='font-primary text-3xl font-semibold text-black'>{food.name}</Title>
 					<p className='text-grey-800 font-secondary'>{price}</p>
 				</div>
 				<p className='text-grey-800 font-secondary text-lg'> {food.description}</p>
@@ -32,7 +34,10 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 			)}
 			<div className='flex flex-col space-y-2'>
 				<Title className='font-primary text-xl font-semibold text-grey-800'>Observações</Title>
-				<Textarea />
+				<Textarea
+					onChange={(e) => handleChangeObservation(food.id, e.target.value)}
+					value={orders.find((order) => order.id === food.id)?.observation}
+				/>
 			</div>
 		</div>
 	)

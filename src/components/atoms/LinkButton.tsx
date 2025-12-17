@@ -12,7 +12,7 @@ type LinkButtonProps = LinkProps & {
 export const LinkButton = ({ className, path, label, href, icon }: LinkButtonProps) => {
 	return (
 		<Link
-			className={twMerge('flex items-center gap-2 text-grey-700', path === href && 'text-primary-500', className)}
+			className={twMerge('flex items-center gap-2 text-grey-700 px-5', path === href && 'text-primary-500', className)}
 			href={href}
 			type='button'
 		>

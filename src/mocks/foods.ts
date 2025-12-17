@@ -2,14 +2,17 @@ export const foodsMock = [
 	{
 		additional: [
 			{
+				id: '019b2c7e-dcbe-76ab-8275-988969d09220',
 				price: 1.5,
 				product: 'Alface',
 			},
 			{
+				id: '019b2c7e-f4cc-760f-b2c9-77c404e3ba1d',
 				price: 1.0,
 				product: 'Tomate',
 			},
 			{
+				id: '019b2c7f-05e4-70da-9033-54870094416a',
 				price: 2.0,
 				product: 'Queijo',
 			},
@@ -18,20 +21,23 @@ export const foodsMock = [
 		description: 'Hambúrguer artesanal com carne suculenta, queijo cheddar e pão brioche.',
 		id: '019b1e82-3200-72a6-9407-50482776f0bc',
 		image: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
+		name: 'Hambúrguer Artesanal',
 		price: 29.9,
-		title: 'Hambúrguer Artesanal',
 	},
 	{
 		additional: [
 			{
+				id: '019b2c7e-58a2-71e8-afb7-c88612f56520',
 				price: 1.5,
 				product: 'Alface',
 			},
 			{
+				id: '019b2c7e-93d5-722f-aeb3-036767e5e397',
 				price: 1.0,
 				product: 'Tomate',
 			},
 			{
+				id: '019b2c7e-aa42-779c-b4e0-f2cc2949337a',
 				price: 2.0,
 				product: 'Queijo',
 			},
@@ -40,8 +46,8 @@ export const foodsMock = [
 		description: 'Pizza clássica italiana com molho de tomate, muçarela e manjericão fresco.',
 		id: '019b1e82-5feb-7189-af5f-a614d381709b',
 		image: 'https://images.unsplash.com/photo-1550547660-d9450f859349',
+		name: 'Pizza Margherita',
 		price: 42.5,
-		title: 'Pizza Margherita',
 	},
 	{
 		additional: [],
@@ -49,8 +55,8 @@ export const foodsMock = [
 		description: 'Seleção de sushi frescos com salmão, atum e arroz temperado.',
 		id: '019b1e82-ce49-7471-814d-83bf6cd9f935',
 		image: 'https://images.unsplash.com/photo-1553621042-f6e147245754',
+		name: 'Sushi Variado',
 		price: 55.0,
-		title: 'Sushi Variado',
 	},
 	{
 		additional: [],
@@ -58,8 +64,8 @@ export const foodsMock = [
 		description: 'Lasanha tradicional com molho bolonhesa, queijo derretido e massa fresca.',
 		id: '019b1e82-e43e-736a-ab8f-a11a62752bde',
 		image: 'https://images.unsplash.com/photo-1603133872878-684f208fb84b',
+		name: 'Lasanha Bolonhesa',
 		price: 38.0,
-		title: 'Lasanha Bolonhesa',
 	},
 	{
 		additional: [],
@@ -67,8 +73,8 @@ export const foodsMock = [
 		description: 'Salada Caesar com frango grelhado, croutons e molho especial.',
 		id: '019b1e82-f39c-706d-b751-c629eaadc07a',
 		image: 'https://images.unsplash.com/photo-1550304943-4f24f54ddde9',
+		name: 'Salada Caesar',
 		price: 26.5,
-		title: 'Salada Caesar',
 	},
 	{
 		additional: [],
@@ -76,7 +82,7 @@ export const foodsMock = [
 		description: 'Panquecas fofinhas servidas com frutas frescas e mel.',
 		id: '019b1e83-046b-722e-8e9b-2a3a4d8e4d6a',
 		image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b',
+		name: 'Panquecas com Frutas',
 		price: 22.0,
-		title: 'Panquecas com Frutas',
 	},
 ] as const

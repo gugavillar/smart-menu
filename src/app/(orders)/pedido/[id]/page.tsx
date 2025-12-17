@@ -14,18 +14,18 @@ export default async function MenuItemPage({ params }: Params) {
 	const { id } = await params
 
 	if (!id) {
-		return redirect(URLS.menu())
+		return redirect(URLS.menu)
 	}
 
 	const food = foodsMock.find((food) => food.id === id)
 
 	if (!food) {
-		return redirect(URLS.menu())
+		return redirect(URLS.menu)
 	}
 
 	return (
 		<div className='flex flex-col overflow-y-hidden'>
-			<HeaderMenuItem image={food.image} title={food.title} />
+			<HeaderMenuItem image={food.image} title={food.name} />
 			<FoodForm food={food} />
 		</div>
 	)
