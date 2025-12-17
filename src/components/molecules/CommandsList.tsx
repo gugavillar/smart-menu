@@ -25,7 +25,13 @@ export const CommandsList = ({ className, ...props }: CommandsListProps) => {
 		>
 			{orders.map((order) => (
 				<div className='flex flex-col space-y-2' key={order.id}>
-					<Card {...order} disabled handleRemove={() => handleRemoveOrder(order.id)} price={order.total} />
+					<Card
+						{...order}
+						description={order.observation}
+						disabled
+						handleRemove={() => handleRemoveOrder(order.id)}
+						price={order.total}
+					/>
 				</div>
 			))}
 		</div>

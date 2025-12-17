@@ -1,9 +1,10 @@
 'use client'
-import type { UUID } from 'crypto'
 import { Trash } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+
+import type { UUID } from 'node:crypto'
 
 import { currencyValue, URLS } from '@/utils'
 
@@ -27,7 +28,7 @@ export const Card = ({ name, price, description, image, id, disabled, handleRemo
 			className='bg-white-300 border border-grey-400 rounded-xl shadow-2xs flex h-[136px]'
 			href={disabled ? '' : URLS.order(id)}
 		>
-			<div className='relative w-full rounded-tl-lg rounded-bl-lg overflow-hidden max-w-[136px] h-full'>
+			<div className='relative w-full rounded-tl-lg rounded-bl-lg overflow-hidden min-w-[136px] max-w-[136px] h-full'>
 				<Image
 					alt={name}
 					className='size-full absolute top-0 start-0 object-cover'
@@ -47,7 +48,9 @@ export const Card = ({ name, price, description, image, id, disabled, handleRemo
 							</button>
 						)}
 					</div>
-					<p className='font-secondary text-xs text-grey-800 line-clamp-2'>{description}</p>
+					{description && (
+						<p className='font-secondary text-xs text-grey-800 line-clamp-2 wrap-anywhere'>{description}</p>
+					)}
 					<div className='mt-auto flex items-center gap-2'>
 						{quantity && <p className='font-primary font-semibold'>Qtd. {quantity}</p>}
 						<p className='font-primary text-lg text-secondary-500 ml-auto font-semibold'>{currencyValue(price)}</p>

@@ -1,7 +1,10 @@
 'use client'
 
-import type { UUID } from 'crypto'
-import { createContext, type ReactNode, useCallback, useContext, useMemo, useState } from 'react'
+import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+
+import type { UUID } from 'node:crypto'
+
+import { getOrdersFromLocalStorage, saveOrdersToLocalStorage } from '@/utils'
 
 type Additional = {
 	id: UUID
@@ -32,11 +35,24 @@ export const OrdersProvider = ({ children }: { children: ReactNode }) => {
 	const [orders, setOrders] = useState<Array<Order>>([])
 
 	const handleAddOrder = useCallback((order: Order) => {
-		setOrders((prevOrders) => [...prevOrders, order])
+		setOrders((prevOrders) => {
+			const newOrders = [...prevOrders, order]
+			saveOrdersToLocalStorage(newOrders)
+			return newOrders
+		})
 	}, [])
 
 	const handleRemoveOrder = useCallback((orderId: Order['id']) => {
-		setOrders((prevOrders) => prevOrders.filter((oldOrder) => oldOrder.id !== orderId))
+		setOrders((prevOrders) => {
+			const newOrders = prevOrders.filter((oldOrder) => oldOrder.id !== orderId)
+			saveOrdersToLocalStorage(newOrders)
+			return newOrders
+		})
+	}, [])
+
+	useEffect(() => {
+		const ordersFromLocalStorage = getOrdersFromLocalStorage()
+		setOrders(ordersFromLocalStorage)
 	}, [])
 
 	const values = useMemo(
