@@ -1,19 +1,45 @@
 'use client'
 
+import { useEffect } from 'react'
+import { useFieldArray, useFormContext } from 'react-hook-form'
+
 import { AddField, Textarea, Title } from '@/components'
-import { useOrders } from '@/contexts'
 import type { foodsMock } from '@/mocks'
 import { currencyValue } from '@/utils'
+
+import type { FoodFormSchema } from './FoodForm.schema'
 
 type FoodFormProps = {
 	food: (typeof foodsMock)[number]
 }
 
 export const FoodForm = ({ food }: FoodFormProps) => {
-	const { orders, handleChangeObservation } = useOrders()
+	const { register, reset, control } = useFormContext<FoodFormSchema>()
+	const { fields } = useFieldArray({
+		control,
+		name: 'additional',
+	})
 	const hasAdditional = !!food?.additional?.length
 
 	const price = hasAdditional ? `A partir de ${currencyValue(food.price)}` : currencyValue(food.price)
+
+	useEffect(() => {
+		if (!food) return
+		reset((prev) => ({
+			...prev,
+			additional:
+				food?.additional?.map((add) => ({
+					id: add.id,
+					price: add.price,
+					product: add.product,
+					quantity: 0,
+				})) ?? [],
+			id: food.id,
+			image: food.image,
+			name: food.name,
+			price: food.price,
+		}))
+	}, [food, reset])
 
 	return (
 		<div className='flex flex-col space-y-6 mt-6 px-4 overflow-y-auto pb-40'>
@@ -27,17 +53,19 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 			{hasAdditional && (
 				<div className='flex flex-col space-y-4'>
 					<Title className='font-primary text-xl font-semibold text-grey-800'>Adicionais</Title>
-					{food?.additional?.map((add) => (
-						<AddField key={add?.product} price={add?.price} product={add?.product} />
+					{fields?.map((add, index) => (
+						<AddField
+							fieldName={`additional.${index}.quantity`}
+							key={add?.product}
+							price={add?.price}
+							product={add?.product}
+						/>
 					))}
 				</div>
 			)}
 			<div className='flex flex-col space-y-2'>
 				<Title className='font-primary text-xl font-semibold text-grey-800'>Observações</Title>
-				<Textarea
-					onChange={(e) => handleChangeObservation(food.id, e.target.value)}
-					value={orders.find((order) => order.id === food.id)?.observation}
-				/>
+				<Textarea {...register('observation')} />
 			</div>
 		</div>
 	)
