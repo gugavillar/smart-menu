@@ -1,7 +1,6 @@
-import { Search } from 'lucide-react'
-
 import { Plate } from '@/assets'
-import { Categories, Foods, Header, Input } from '@/components'
+import { Header } from '@/components'
+import { SearchHome } from '@/components/organisms/SeachHome/SearchHome'
 
 export default function HomePage() {
 	return (
@@ -12,15 +11,7 @@ export default function HomePage() {
 				title='Smart menu'
 				titleClassName='text-4xl text-center'
 			/>
-			<Input
-				icon={<Search className='text-grey-600' />}
-				placeholder='Qual comida você está procurando?'
-				type='search'
-			/>
-			<div className='flex flex-col w-full mt-8 space-y-8 pb-28 overflow-y-auto'>
-				<Categories />
-				<Foods />
-			</div>
+			<SearchHome />
 		</div>
 	)
 }

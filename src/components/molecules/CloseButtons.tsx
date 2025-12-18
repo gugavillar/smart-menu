@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 
-import { Title } from '@/components/atoms'
+import { Title } from '@/components'
 import { useOrders } from '@/contexts'
 import { currencyValue, URLS } from '@/utils'
 

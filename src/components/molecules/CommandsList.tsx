@@ -3,7 +3,7 @@ import { OctagonAlert } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { Card, Title } from '@/components/atoms'
+import { Card, Title } from '@/components'
 import { useOrders } from '@/contexts'
 
 type CommandsListProps = ComponentProps<'div'>
