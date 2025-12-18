@@ -1,3 +1,4 @@
+'use client'
 import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
