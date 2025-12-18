@@ -11,6 +11,7 @@ RUN pnpm install --frozen-lockfile
 FROM deps AS build
 
 COPY . .
+RUN pnpm run build
 
 FROM gcr.io/distroless/nodejs20 AS production
 WORKDIR /app
@@ -19,7 +20,7 @@ ENV NODE_ENV=production
 
 COPY --from=build /app/public ./public
 COPY --from=build /app/.next/standalone ./
-# COPY --from=build /app/.next/static ./.next/static
+COPY --from=build /app/.next/static ./.next/static
 
 # SHARP (binário + dependências)
 COPY --from=build /app/node_modules/sharp ./node_modules/sharp
