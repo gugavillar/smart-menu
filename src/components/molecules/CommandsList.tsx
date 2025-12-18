@@ -1,4 +1,5 @@
 'use client'
+import { OctagonAlert } from 'lucide-react'
 import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -12,7 +13,8 @@ export const CommandsList = ({ className, ...props }: CommandsListProps) => {
 
 	if (!orders.length) {
 		return (
-			<div className='flex items-center justify-center h-[calc(100dvh-220px)]'>
+			<div className='flex flex-col gap-4 items-center justify-center h-[calc(80dvh-220px)]'>
+				<OctagonAlert className='text-primary-500 size-12' />
 				<Title className='text-grey-800 text-2xl'>Nenhum pedido encontrado</Title>
 			</div>
 		)

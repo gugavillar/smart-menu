@@ -41,6 +41,9 @@ importers:
       usehooks-ts:
         specifier: ^3.1.1
         version: 3.1.1(react@19.2.1)
+      uuid:
+        specifier: ^13.0.0
+        version: 13.0.0
       validations-br:
         specifier: ^1.6.0
         version: 1.6.0
@@ -869,6 +872,10 @@ packages:
     peerDependencies:
       react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
 
+  uuid@13.0.0:
+    resolution: {integrity: sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==}
+    hasBin: true
+
   validations-br@1.6.0:
     resolution: {integrity: sha512-sFnDslgfoqyTDJJAwrJWi4/mHK4XT/yC326GjTphnTUNvdjeLOy32q0wp2jlXjYpRulWVq5LouicNQuBMCi1Mw==}
 
@@ -1519,6 +1526,8 @@ snapshots:
     dependencies:
       lodash.debounce: 4.0.8
       react: 19.2.1
+
+  uuid@13.0.0: {}
 
   validations-br@1.6.0: {}
 

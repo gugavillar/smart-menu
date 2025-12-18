@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useFieldArray, useFormContext } from 'react-hook-form'
+import { v4 as uuid } from 'uuid'
 
 import { AddField, Textarea, Title } from '@/components'
 import type { foodsMock } from '@/mocks'
@@ -35,7 +36,7 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 						product: add.product,
 						quantity: 0,
 					})) ?? [],
-				id: food.id,
+				id: uuid(),
 				image: food.image,
 				name: food.name,
 				price: food.price,

@@ -60,6 +60,7 @@ export const OrdersProvider = ({ children }: { children: ReactNode }) => {
 				return newOrders
 			})
 			methods.reset()
+			toast.custom(({ id }) => <Alert id={id} message='O prato foi incluído na comanda.' title='Tudo certo!' />)
 		},
 		[methods.reset]
 	)
@@ -70,10 +71,11 @@ export const OrdersProvider = ({ children }: { children: ReactNode }) => {
 			saveOrdersToLocalStorage(newOrders)
 			return newOrders
 		})
+		toast.custom(({ id }) => <Alert id={id} message='O prato foi retirado da comanda.' title='Tudo certo!' />)
 	}, [])
 
 	const handleCreateOrder = useCallback(() => {
-		toast.custom(({ id }) => <Alert id={id} />)
+		toast.custom(({ id }) => <Alert id={id} message='A cozinha já começou o preparo.' title='Pedido confirmado!' />)
 		methods.reset()
 		removeOrdersFromLocalStorage()
 		setOrders([])
