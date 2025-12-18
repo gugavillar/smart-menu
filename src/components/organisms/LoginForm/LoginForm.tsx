@@ -22,8 +22,7 @@ export const LoginForm = () => {
 		resolver: formLoginSchemaResolver,
 	})
 
-	const onSubmit = (data: FormLoginSchema) => {
-		console.log(data)
+	const onSubmit = () => {
 		push(URLS.home)
 	}
 

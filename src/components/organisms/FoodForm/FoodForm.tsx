@@ -25,20 +25,23 @@ export const FoodForm = ({ food }: FoodFormProps) => {
 
 	useEffect(() => {
 		if (!food) return
-		reset((prev) => ({
-			...prev,
-			additional:
-				food?.additional?.map((add) => ({
-					id: add.id,
-					price: add.price,
-					product: add.product,
-					quantity: 0,
-				})) ?? [],
-			id: food.id,
-			image: food.image,
-			name: food.name,
-			price: food.price,
-		}))
+		reset(
+			(prev) => ({
+				...prev,
+				additional:
+					food?.additional?.map((add) => ({
+						id: add.id,
+						price: add.price,
+						product: add.product,
+						quantity: 0,
+					})) ?? [],
+				id: food.id,
+				image: food.image,
+				name: food.name,
+				price: food.price,
+			}),
+			{ keepDefaultValues: true }
+		)
 	}, [food, reset])
 
 	return (

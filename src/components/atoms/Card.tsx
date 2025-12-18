@@ -19,9 +19,22 @@ type CardProps = {
 	disabled?: boolean
 	handleRemove?: VoidFunction
 	quantity?: number
+	observation?: string
+	added?: string
 }
 
-export const Card = ({ name, price, description, image, id, disabled, handleRemove, quantity }: CardProps) => {
+export const Card = ({
+	name,
+	price,
+	description,
+	image,
+	id,
+	disabled,
+	handleRemove,
+	quantity,
+	observation,
+	added,
+}: CardProps) => {
 	const [imageError, setImageError] = useState(false)
 	return (
 		<Link
@@ -48,9 +61,15 @@ export const Card = ({ name, price, description, image, id, disabled, handleRemo
 							</button>
 						)}
 					</div>
-					{description && (
-						<p className='font-secondary text-xs text-grey-800 line-clamp-2 wrap-anywhere'>{description}</p>
-					)}
+					<div className='flex flex-col space-y-0.5'>
+						{description && (
+							<p className='font-secondary text-xs text-grey-800 line-clamp-2 wrap-anywhere'> {description}</p>
+						)}
+						{added && <p className='font-secondary text-xs text-grey-800 line-clamp-2 wrap-anywhere'>{added}</p>}
+						{observation && (
+							<p className='font-secondary text-xs text-grey-800 line-clamp-2 wrap-anywhere'>{observation}</p>
+						)}
+					</div>
 					<div className='mt-auto flex items-center gap-2'>
 						{quantity && <p className='font-primary font-semibold'>Qtd. {quantity}</p>}
 						<p className='font-primary text-lg text-secondary-500 ml-auto font-semibold'>{currencyValue(price)}</p>

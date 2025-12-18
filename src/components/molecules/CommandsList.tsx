@@ -23,17 +23,28 @@ export const CommandsList = ({ className, ...props }: CommandsListProps) => {
 			className={twMerge('columns-1 md:columns-2 lg:columns-3 space-y-4 overflow-y-auto mt-4 pb-28', className)}
 			{...props}
 		>
-			{orders.map((order) => (
-				<div className='flex flex-col space-y-2' key={order.id}>
-					<Card
-						{...order}
-						description={order.observation}
-						disabled
-						handleRemove={() => handleRemoveOrder(order.id)}
-						price={order.total}
-					/>
-				</div>
-			))}
+			{orders.map((order) => {
+				const additional = order.additional
+					?.map((item) => {
+						if (item.quantity) {
+							return `${item.product} - ${item.quantity}`
+						}
+						return false
+					})
+					.filter(Boolean)
+				return (
+					<div className='flex flex-col space-y-2' key={order.id}>
+						<Card
+							{...order}
+							added={additional?.join(', ')}
+							disabled
+							handleRemove={() => handleRemoveOrder(order.id)}
+							observation={order.observation}
+							price={order.total}
+						/>
+					</div>
+				)
+			})}
 		</div>
 	)
 }

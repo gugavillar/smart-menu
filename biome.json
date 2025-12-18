@@ -56,7 +56,10 @@
 		"rules": {
 			"a11y": { "noSvgWithoutTitle": "off" },
 			"recommended": true,
-			"style": { "useBlockStatements": "off", "useImportType": "on" }
+			"style": { "useBlockStatements": "off", "useImportType": "on" },
+			"suspicious": {
+				"noConsole": "error"
+			}
 		}
 	},
 	"vcs": { "clientKind": "git", "enabled": true, "useIgnoreFile": true }
