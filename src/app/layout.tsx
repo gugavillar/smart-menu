@@ -5,6 +5,7 @@ import './globals.css'
 import { Toaster } from 'react-hot-toast'
 
 import { OrdersProvider } from '@/contexts'
+import { QueryProvider } from '@/providers'
 
 const lato = Lato({
 	subsets: ['latin'],
@@ -31,7 +32,9 @@ export default function RootLayout({
 	return (
 		<html className={`${lato.variable} ${roboto.variable}`} lang='pt-BR'>
 			<body className='h-dvh w-dvw antialiased background overflow-hidden'>
-				<OrdersProvider>{children}</OrdersProvider>
+				<QueryProvider>
+					<OrdersProvider>{children}</OrdersProvider>
+				</QueryProvider>
 				<Toaster position='top-center' toastOptions={{ duration: 3000 }} />
 			</body>
 		</html>
