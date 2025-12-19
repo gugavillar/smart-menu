@@ -17,6 +17,7 @@ const foodFormSchema = z.object({
 		.string()
 		.transform((value) => value.trim())
 		.optional(),
+	orderMode: z.enum(['delivery', 'takeaway', 'table']).nullable(),
 	price: z.number(),
 	quantity: z.number(),
 })

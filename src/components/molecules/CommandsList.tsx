@@ -1,10 +1,12 @@
 'use client'
 import { OctagonAlert } from 'lucide-react'
+import Link from 'next/link'
 import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 import { Card, Title } from '@/components'
 import { useOrders } from '@/contexts'
+import { URLS } from '@/utils'
 
 type CommandsListProps = ComponentProps<'div'>
 
@@ -47,6 +49,12 @@ export const CommandsList = ({ className, ...props }: CommandsListProps) => {
 					</div>
 				)
 			})}
+			<Link
+				className='font-secondary border border-primary-500 rounded-xl w-full inline-flex items-center justify-center px-6 py-3.5 mt-6'
+				href={URLS.menu}
+			>
+				Adicionar mais itens
+			</Link>
 		</div>
 	)
 }
